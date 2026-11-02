@@ -1,2 +1,2 @@
-# capst1
-This is a capstone 1 project repository
+# Item Inventory Management System
+This is a Capstone 1 project repository. 
