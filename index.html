@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IT Equipment Manager</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">🖥️</span>
+        <span class="brand-name">IT Equipment Manager</span>
+      </div>
+      <div class="admin-tag">Admin</div>
+    </header>
+
+    <main class="content">
+      <section class="stats" id="stats">
+        <div class="stat-card stat-total">
+          <div class="stat-icon">📦</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statTotal">0</div>
+            <div class="stat-label">Total Items</div>
+          </div>
+        </div>
+        <div class="stat-card stat-available">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statAvailable">0</div>
+            <div class="stat-label">Available</div>
+          </div>
+        </div>
+        <div class="stat-card stat-assigned">
+          <div class="stat-icon">👤</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statAssigned">0</div>
+            <div class="stat-label">Assigned</div>
+          </div>
+        </div>
+        <div class="stat-card stat-repair">
+          <div class="stat-icon">🛠️</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statRepair">0</div>
+            <div class="stat-label">In Repair</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel-title">Add New Item</h2>
+        <form id="itemForm" class="item-form">
+          <div class="field">
+            <label for="name">Item Name</label>
+            <input type="text" id="name" placeholder="e.g. Dell Latitude 5420" required />
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="" disabled selected>Select category</option>
+              <option>Laptop</option>
+              <option>Desktop</option>
+              <option>Monitor</option>
+              <option>Printer</option>
+              <option>Networking</option>
+              <option>Peripheral</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="serial">Serial Number</label>
+            <input type="text" id="serial" placeholder="e.g. SN-00123" required />
+          </div>
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status" required>
+              <option>Available</option>
+              <option>Assigned</option>
+              <option>In Repair</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="assignedTo">Assigned To (optional)</label>
+            <input type="text" id="assignedTo" placeholder="e.g. Jane Doe" />
+          </div>
+          <button type="submit" class="btn-primary">Add Item</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header-row">
+          <h2 class="panel-title">Inventory</h2>
+          <input type="text" id="searchBox" class="search-box" placeholder="Search items..." />
+        </div>
+        <div class="table-wrap">
+          <table id="itemsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Serial #</th>
+                <th>Status</th>
+                <th>Assigned To</th>
+                <th>Date Added</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="itemsBody">
+            </tbody>
+          </table>
+          <div id="emptyState" class="empty-state" hidden>
+            No items yet. Add your first item above.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
