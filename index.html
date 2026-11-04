@@ -84,7 +84,14 @@
             <label for="assignedTo">Assigned To (optional)</label>
             <input type="text" id="assignedTo" placeholder="e.g. Jane Doe" />
           </div>
-          <button type="submit" class="btn-primary">Add Item</button>
+          <div class="field">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" min="1" step="1" value="1" required />
+          </div>
+          <div class="field form-actions">
+            <button type="submit" class="btn-primary" id="submitBtn">Add Item</button>
+            <button type="button" class="btn-secondary" id="cancelEditBtn" hidden>Cancel</button>
+          </div>
         </form>
       </section>
 
@@ -102,6 +109,7 @@
                 <th>Serial #</th>
                 <th>Status</th>
                 <th>Assigned To</th>
+                <th>Qty</th>
                 <th>Date Added</th>
                 <th></th>
               </tr>
