@@ -1,3 +1,6 @@
+#Disclosure of AI usage
+To develop this project, Claude CLI was used to debug, suggest, and design the project. 
+
 # Item Inventory Management System
 This is a Capstone 1 project repository.
 
